@@ -12,7 +12,15 @@ module.exports = {
     },
     mode: 'development',
     resolve: { // extensión de archivos a tomar en cuenta
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        alias: {
+            '@components': path.resolve(__dirname, 'src/components'),
+            '@container': path.resolve(__dirname, 'src/containers'),
+            '@icons': path.resolve(__dirname, 'src/assets/icons'),
+            '@logos': path.resolve(__dirname, 'src/assets/logos'),
+            '@pages': path.resolve(__dirname, 'src/pages'),
+            '@styles': path.resolve(__dirname, 'src/styles'),
+        }
     },
     module: { // loaders para cada tipo de archivo
         rules: [ // reglas para usar
@@ -41,7 +49,11 @@ module.exports = {
                   // Compiles Sass to CSS
                   "sass-loader",
                 ],
-            }
+            },
+            {
+				test: /\.(png|svg|jpg|gif)$/,
+				type: 'asset'
+			}
         ]
     },
     plugins: [ // plugins 
