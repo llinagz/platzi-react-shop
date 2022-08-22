@@ -8,12 +8,12 @@ import AppContext from "../context/AppContext";
 import "@styles/Header.scss";
 
 const Header = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggleEmail, setToggle] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
   const { state } = useContext(AppContext);
 
   const handleToggle = () => {
-    setToggle(!toggle);
+    setToggle(!toggleEmail);
   };
 
   return (
@@ -59,7 +59,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      {toggle && <Menu />}
+      {toggleEmail && <Menu />}
       {toggleOrders && <MyOrder />}
     </nav>
   );
