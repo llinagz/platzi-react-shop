@@ -1,16 +1,10 @@
-//import React, { useState } from "react";
 import React, { useContext } from "react";
 import AppContext from "../context/AppContext.js";
 import addToCartIcon from "@icons/bt_add_to_cart.svg";
 import "../styles/ProductItem.scss";
 
 const ProductItem = ({ product }) => {
-  // const [cart, setCart] = useState([]);
   const { addToCart } = useContext(AppContext);
-
-  // const handleClick = () => {
-  //   setCart();
-  // };
 
   const handleClick = (item) => {
     addToCart(item);
